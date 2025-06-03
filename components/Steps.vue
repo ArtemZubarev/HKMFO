@@ -63,4 +63,21 @@ const list = [
   font-size: 18px;
   font-weight: 300;
 }
+@media (max-width: 768px) {
+  .step {
+    flex-direction: column;
+  }
+  .image {
+    width: 100%;
+  }
+  .steps:before {
+    left: 50%;
+  }
+  .box {
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 31px 15px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 0px 31px 15px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 31px 15px rgba(255, 255, 255, 1);
+  }
+}
 </style>

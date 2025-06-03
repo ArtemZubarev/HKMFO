@@ -3,16 +3,26 @@
     <div class="wrapper overlay">
       <h1>Trusted hands for future plans</h1>
       <p>Experienced partner in trust setup and asset stewardship</p>
-      <button class="button">
+      <a
+        href="#profile"
+        class="button"
+        @click.prevent="() => handleLinkClick('#profile')"
+      >
         Registered
         <NuxtImg class="button__icon w-[29px]" src="/images/arrow-button.svg" />
-      </button>
+      </a>
     </div>
     <!-- <NuxtImg src="/images/banner.jpg" /> -->
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { useSmoothScroll } from "../composables/useSmoothScroll";
+const { scrollToSection } = useSmoothScroll();
+function handleLinkClick(href) {
+  scrollToSection(href, -96);
+}
+</script>
 
 <style scoped>
 .hero {
@@ -42,7 +52,7 @@ p {
 }
 .button {
   padding: 6px 20px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 15px;
   font-size: 14px;
@@ -53,5 +63,14 @@ p {
 .button__icon {
   margin-right: -15px;
   transition: 0.2s;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background: #eaeaea;
+  }
+  .overlay {
+    padding-bottom: 150px;
+  }
 }
 </style>

@@ -9,11 +9,13 @@
           <div class="inner">
             <div class="title">Pages</div>
             <ul class="list">
-              <li class="list__item">Home</li>
-              <li class="list__item">History</li>
-              <li class="list__item">Values</li>
-              <li class="list__item">Services</li>
-              <li class="list__item">Process</li>
+              <li class="list__item" v-for="link in pages" :key="link.href">
+                <a
+                  :href="link.href"
+                  @click.prevent="handleLinkClick(link.href)"
+                  >{{ link.title }}</a
+                >
+              </li>
             </ul>
           </div>
           <div class="inner">
@@ -42,14 +44,14 @@
           </div>
           <div class="inner">
             <div class="title">Still have questions?</div>
-
+            <EmailInput v-model="parentValue" @button-click="onButtonClick" />
             <p class="answer">We will answer any questions within 5 minutes</p>
           </div>
         </div>
       </div>
       <div class="box">
         <p class="copyright">
-          copyright {{ currentYear }} @HK MFO Trusted Limited. All Right
+          Copyright {{ currentYear }} @HK MFO Trusted Limited. All Right
           Reserved
         </p>
       </div>
@@ -59,6 +61,42 @@
 
 <script setup>
 const currentYear = new Date().getFullYear();
+import { ref } from "vue";
+import { useSmoothScroll } from "../composables/useSmoothScroll";
+const { scrollToSection } = useSmoothScroll();
+
+const pages = [
+  {
+    title: "Home",
+    href: "#home",
+  },
+  {
+    title: "History",
+    href: "#history",
+  },
+  {
+    title: "Values",
+    href: "#values",
+  },
+  {
+    title: "Services",
+    href: "#values",
+  },
+  {
+    title: "Process",
+    href: "#process",
+  },
+];
+
+const parentValue = ref("");
+
+const onButtonClick = (val) => {
+  console.log("Кнопка нажата, значение:", val);
+};
+
+function handleLinkClick(href) {
+  scrollToSection(href, -96);
+}
 </script>
 <style scoped>
 .footer {
@@ -109,5 +147,40 @@ li {
 }
 .icon {
   width: 20px;
+}
+
+@media (max-width: 768px) {
+  .block {
+    flex-wrap: wrap;
+  }
+  .inner:nth-of-type(1) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .inner:nth-of-type(2),
+  .inner:nth-of-type(3) {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .inner:nth-of-type(4) {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .inner:nth-of-type(5) {
+    margin-top: 20px;
+  }
+  .list {
+    align-items: center;
+  }
+  .list.contacts {
+    gap: 10px;
+  }
 }
 </style>

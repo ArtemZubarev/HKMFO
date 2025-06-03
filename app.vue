@@ -15,7 +15,6 @@
 <script setup>
 import Header from "./components/Header.vue";
 import HeroSection from "./components/HeroSection.vue";
-// и так далее...
 </script>
 
 <style>
@@ -25,9 +24,11 @@ body {
 }
 
 .wrapper {
-  max-width: 1092px;
+  max-width: 1122px;
   width: 100%;
   margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .button {

@@ -1,5 +1,5 @@
 <template>
-  <section class="services">
+  <section class="services" id="services">
     <div class="wrapper">
       <div class="box">
         <div class="inner">
@@ -45,5 +45,11 @@
 .button {
   padding: 0px 20px;
   cursor: default;
+}
+
+@media (max-width: 768px) {
+  .box {
+    flex-direction: column;
+  }
 }
 </style>

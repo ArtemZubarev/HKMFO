@@ -1,5 +1,5 @@
 <template>
-  <section class="history">
+  <section class="history" id="history">
     <div class="wrapper">
       <div class="box">
         <div class="inner">
@@ -67,5 +67,20 @@
 .button {
   padding: 0px 20px;
   cursor: default;
+}
+@media (max-width: 768px) {
+  .box {
+    flex-direction: column;
+  }
+  .history {
+    padding-top: 80px;
+  }
+  .inner {
+    width: 100%;
+  }
+  .inner-text {
+    padding-left: unset;
+    padding-top: 30px;
+  }
 }
 </style>

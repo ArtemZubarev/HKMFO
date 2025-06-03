@@ -1,5 +1,5 @@
 <template>
-  <section class="work">
+  <section class="work" id="process">
     <div class="wrapper">
       <div class="box">
         <div class="inner">
@@ -45,5 +45,18 @@
   padding: 0px 20px;
   cursor: default;
   margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .work {
+    padding-top: 80px;
+  }
+  .box {
+    flex-direction: column;
+  }
+  .title {
+    font-size: 40px;
+    margin-top: 20px;
+  }
 }
 </style>

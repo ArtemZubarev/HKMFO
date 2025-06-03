@@ -1,9 +1,11 @@
 <template>
-  <header>
+  <header id="home">
     <nav class="menu-container flex wrapper">
       <ul class="menu-section">
         <li v-for="link in leftLinks" :key="link.href">
-          <a :href="link.href">{{ link.text }}</a>
+          <a :href="link.href" @click.prevent="handleLinkClick(link.href)">{{
+            link.text
+          }}</a>
         </li>
       </ul>
       <div class="logo">
@@ -11,16 +13,28 @@
       </div>
       <ul class="menu-section">
         <li v-for="link in rightLinks" :key="link.href">
-          <a :href="link.href">{{ link.text }}</a>
+          <a :href="link.href" @click.prevent="handleLinkClick(link.href)">{{
+            link.text
+          }}</a>
         </li>
       </ul>
     </nav>
+    <div class="mobile">
+      <NuxtImg
+        class="hamburger"
+        src="/images/ham.svg"
+        @click="menuOpen = true"
+      />
+      <SideMenu :links="links" :isOpen="menuOpen" @close="menuOpen = false" />
+    </div>
   </header>
 </template>
 
 <script setup>
+import { ref, nextTick } from "vue";
+import { useSmoothScroll } from "../composables/useSmoothScroll";
 const links = [
-  { text: "Home", href: "#" },
+  { text: "Home", href: "#home" },
   { text: "History", href: "#history" },
   { text: "Values", href: "#values" },
   { text: "Services", href: "#services" },
@@ -28,9 +42,16 @@ const links = [
   { text: "Profile", href: "#profile" },
 ];
 
+const menuOpen = ref(false);
+
 const midIndex = Math.ceil(links.length / 2);
 const leftLinks = links.slice(0, midIndex);
 const rightLinks = links.slice(midIndex);
+
+const { scrollToSection } = useSmoothScroll();
+function handleLinkClick(href) {
+  scrollToSection(href, -96);
+}
 </script>
 
 <style scoped>
@@ -39,8 +60,17 @@ header {
   z-index: 10;
   width: 100%;
   height: 96px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   background: rgba(0, 0, 0, 0.3);
+}
+header:after {
+  content: "";
+  position: absolute;
+  width: 202px;
+  height: 101px;
+  top: 100%;
+  left: calc(50% - 100.5px);
+  background: url("/images/subtract.png");
 }
 
 .logo {
@@ -50,6 +80,7 @@ header {
   position: absolute;
   left: calc(50% - 60px);
   top: 30px;
+  z-index: 20;
 }
 
 .menu-container {
@@ -68,10 +99,35 @@ header {
   padding: 0;
   margin: 0;
   width: 36%;
-
   height: 100%;
 }
 li {
   color: #fff;
+}
+.hamburger {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  width: 30px;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 60px;
+  }
+
+  .logo {
+    top: 15px;
+    max-width: 110px;
+    left: calc(50% - 55px);
+  }
+  .menu-section {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
 }
 </style>

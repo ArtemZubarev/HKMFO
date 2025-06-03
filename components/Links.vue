@@ -95,4 +95,28 @@ const list = [
   left: 30px;
   bottom: 20px;
 }
+
+@media (max-width: 1024px) {
+  .box {
+    /* grid-template-columns: repeat(2, 1fr); */
+  }
+}
+@media (max-width: 950px) {
+  .box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 648px) {
+  .box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 540px) {
+  .links {
+    padding-top: 40px;
+  }
+  /* .box {
+    grid-template-columns: repeat(1, 1fr);
+  } */
+}
 </style>

@@ -68,11 +68,13 @@ function toggle(index) {
   display: flex;
   cursor: pointer;
   align-items: center;
-  /* justify-content: space-between; */
-}
-.item {
   padding: 30px 0;
+  transition: 0.2s;
 }
+.banner:hover {
+  opacity: 0.4;
+}
+
 .item:not(:last-of-type) {
   border-bottom: 1px solid #777777;
 }
@@ -122,6 +124,7 @@ function toggle(index) {
 .accordion-enter-from,
 .accordion-leave-to {
   max-height: 0;
+  padding: 0;
   opacity: 0;
 }
 
@@ -129,5 +132,33 @@ function toggle(index) {
 .accordion-leave-from {
   max-height: 500px; /* Задай максимум для открытого блока */
   opacity: 1;
+}
+@media (max-width: 1024px) {
+  .showable {
+    padding-left: 15%;
+  }
+  .id {
+    min-width: 15%;
+  }
+}
+@media (max-width: 768px) {
+  .accordeon {
+    padding-top: 80px;
+  }
+  .id {
+    width: unset;
+    min-width: 40px;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .showable {
+    padding-left: 0;
+    flex-direction: column;
+    padding-top: 0;
+  }
+  .box {
+    width: 100%;
+  }
 }
 </style>

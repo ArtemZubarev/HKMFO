@@ -38,4 +38,18 @@
   cursor: default;
   margin-top: 20px;
 }
+@media (max-width: 768px) {
+  .welcome {
+    padding-top: 80px;
+  }
+  .button {
+    margin-bottom: 20px;
+  }
+  .box {
+    flex-direction: column;
+  }
+  .text {
+    font-size: 26px;
+  }
+}
 </style>

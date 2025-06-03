@@ -1,5 +1,5 @@
 <template>
-  <section class="values">
+  <section class="values" id="values">
     <div class="wrapper">
       <div class="list">
         <div
@@ -85,5 +85,14 @@ const values = [
 .value.excellence {
   background: #78aee4;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .values {
+    padding-top: 80px;
+  }
+  .list {
+    flex-direction: column;
+  }
 }
 </style>

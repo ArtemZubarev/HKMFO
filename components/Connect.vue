@@ -1,5 +1,5 @@
 <template>
-  <div class="connect">
+  <div class="connect" id="profile">
     <div class="wrapper">
       <button class="button">Get in Touch</button>
       <div class="box">
@@ -29,5 +29,22 @@
   max-width: 440px;
   width: 100%;
   flex-shrink: 0;
+}
+@media (max-width: 1024px) {
+  .box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form {
+    max-width: 600px;
+  }
+  .field.input {
+    max-width: 100%;
+  }
+}
+@media (max-width: 540px) {
+  .connect {
+    margin-top: 80px;
+  }
 }
 </style>

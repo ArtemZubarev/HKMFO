@@ -1,12 +1,25 @@
 <template>
   <div class="experience">
     <div class="title">Take your experience to the next level with HK MFO</div>
-    <button class="button">
+    <a
+      href="#profile"
+      class="button"
+      @click.prevent="() => handleLinkClick('#profile')"
+    >
       Registered
       <NuxtImg class="button__icon w-[29px]" src="/images/arrow-white.svg" />
-    </button>
+    </a>
   </div>
 </template>
+
+<script setup>
+import { useSmoothScroll } from "../composables/useSmoothScroll";
+const { scrollToSection } = useSmoothScroll();
+function handleLinkClick(href) {
+  scrollToSection(href, -96);
+}
+</script>
+
 <style scoped>
 .title {
   font-size: 40px;
@@ -40,7 +53,7 @@
 .button {
   position: relative;
   padding: 6px 20px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 15px;
   font-size: 14px;
@@ -49,5 +62,11 @@
   border-color: #fff;
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
+}
+
+@media (max-width: 540px) {
+  .experience {
+    margin-top: 80px;
+  }
 }
 </style>

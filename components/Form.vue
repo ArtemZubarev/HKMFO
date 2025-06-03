@@ -117,4 +117,16 @@ textarea::placeholder {
   color: #fff;
   margin-top: 25px;
 }
+
+@media (max-width: 1024px) {
+  .form {
+    margin-top: 40px;
+  }
+  .field.input {
+    max-width: 100%;
+  }
+  input {
+    max-width: 100%;
+  }
+}
 </style>
