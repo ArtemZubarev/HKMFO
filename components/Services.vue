@@ -51,5 +51,8 @@
   .box {
     flex-direction: column;
   }
+  .text {
+    font-size: 26px;
+  }
 }
 </style>

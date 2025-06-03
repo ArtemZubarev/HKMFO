@@ -150,34 +150,58 @@ li {
 }
 
 @media (max-width: 768px) {
+  .logo {
+    /* max-width: 70px; */
+  }
+  .box {
+    /* padding: 0 10px; */
+  }
   .block {
     flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0px;
+    align-items: stretch;
   }
   .inner:nth-of-type(1) {
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 40px;
+  }
+  .inner:nth-of-type(2) {
+    order: 2;
+    /* padding-left: 20px; */
+  }
+  .inner:nth-of-type(3) {
+    order: 3;
   }
   .inner:nth-of-type(2),
   .inner:nth-of-type(3) {
-    width: 50%;
+    width: 30%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-top: 30px;
+    /* align-items: center; */
   }
   .inner:nth-of-type(4) {
-    width: 100%;
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    order: 1;
+    border-bottom: 1px solid #fff;
+    flex-grow: 1;
+    padding-left: 20px;
+    padding-bottom: 40px;
   }
   .inner:nth-of-type(5) {
-    margin-top: 20px;
+    display: none;
   }
   .list {
-    align-items: center;
+    /* align-items: center; */
+  }
+  .list__item {
+    gap: 5px;
   }
   .list.contacts {
     gap: 10px;

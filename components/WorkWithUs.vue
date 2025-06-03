@@ -58,5 +58,8 @@
     font-size: 40px;
     margin-top: 20px;
   }
+  .text {
+    font-size: 26px;
+  }
 }
 </style>

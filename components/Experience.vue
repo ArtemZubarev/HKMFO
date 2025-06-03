@@ -67,6 +67,13 @@ function handleLinkClick(href) {
 @media (max-width: 540px) {
   .experience {
     margin-top: 80px;
+    padding-top: 20px;
+    background-size: 400%;
+  }
+  .title {
+    font-size: 32px;
+    padding: 0 15px;
+    line-height: 120%;
   }
 }
 </style>

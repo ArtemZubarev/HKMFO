@@ -150,7 +150,8 @@ function toggle(index) {
     min-width: 40px;
   }
   .title {
-    font-size: 26px;
+    font-size: 24px;
+    padding-right: 40px;
   }
   .showable {
     padding-left: 0;

@@ -16,27 +16,27 @@
 const list = [
   {
     text: "Tax Concessions for Family-owned Investment Holding Vehicles",
-    url: "#",
+    url: "http://ird.gov.hk/eng/tax/bus_fihv.htm#a01",
   },
   {
     text: "Frequently Asked Questions (FAQ) | Hong Kong: a Leading Hub for Family Offices",
-    url: "#",
+    url: "https://www.familyofficehk.gov.hk/en/fohk-team-help/frequently-asked-questions-faq/",
   },
   {
     text: "Hong Kong: a Leading Hub for Family Offices",
-    url: "#",
+    url: "https://www.familyofficehk.gov.hk/en/setting-up/",
   },
   {
     text: "Trustee Ordinance",
-    url: "#",
+    url: "https://www.elegislation.gov.hk/hk/cap29",
   },
   {
     text: "Anti-Money Laundering and Counter-Terrorist Financing Ordinance",
-    url: "#",
+    url: "https://www.elegislation.gov.hk/hk/cap615",
   },
   {
     text: "Quick Reference Guide to Licensing Requirements",
-    url: "#",
+    url: "/SFC_leaflet.pdf",
   },
 ];
 </script>

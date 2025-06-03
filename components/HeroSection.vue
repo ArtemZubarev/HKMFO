@@ -1,8 +1,14 @@
 <template>
   <section class="hero">
     <div class="wrapper overlay">
-      <h1>Trusted hands for future plans</h1>
-      <p>Experienced partner in trust setup and asset stewardship</p>
+      <h1>
+        Trusted hands <br />
+        for future plans
+      </h1>
+      <p>
+        Experienced partner in trust <br />
+        setup and asset stewardship
+      </p>
       <a
         href="#profile"
         class="button"
@@ -67,10 +73,34 @@ p {
 
 @media (max-width: 768px) {
   .hero {
-    background: #eaeaea;
+    /* background: #eaeaea; */
+    background-position: bottom 0;
+    background: none;
   }
   .overlay {
-    padding-bottom: 150px;
+    padding-bottom: 250px;
+    margin-top: 50px;
+    padding-top: 150px;
+    background: none;
+  }
+  .hero:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background: url("/images/banner.jpg") center/cover no-repeat;
+    background-position: -800px 40px;
+    z-index: -1;
+    transform: scale(1);
+  }
+  h1 {
+    font-size: 38px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 300;
   }
 }
 </style>
