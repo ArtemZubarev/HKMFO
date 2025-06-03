@@ -73,6 +73,7 @@ header:after {
   top: 100%;
   left: calc(50% - 100.5px);
   background: url("/images/subtract.png");
+  background-size: center/cover;
 }
 
 .logo {
@@ -120,11 +121,15 @@ li {
 
   .logo {
     top: 15px;
-    max-width: 110px;
-    left: calc(50% - 55px);
+    max-width: 100px;
+    left: calc(50% - 50px);
   }
   .menu-section {
     display: none;
+  }
+  header:after {
+    transform: scale(0.8);
+    top: calc(100% - 10px);
   }
 }
 @media (min-width: 769px) {

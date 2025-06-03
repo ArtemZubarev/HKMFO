@@ -29,16 +29,19 @@
             <div class="title">Contacts</div>
             <ul class="list contacts">
               <li class="list__item">
-                <NuxtImg class="icon" src="/images/ph.svg" />
-                <a href="tel:+99 002 77291 00">+99 002 77291 00</a>
+                <NuxtImg class="icon" src="/images/mail.svg" />
+                <a href="mailto:info@mfotrust.hk">info@mfotrust.hk</a>
               </li>
               <li class="list__item">
                 <NuxtImg class="icon" src="/images/location.svg" />
-                <a href="" target="_blank">620, Orange well, NJ, Hong Kong</a>
-              </li>
-              <li class="list__item">
-                <NuxtImg class="icon" src="/images/mail.svg" />
-                <a href="mailto:+99 002 77291 00">hello@mfo.com</a>
+                <a
+                  href="https://maps.google.com/?q=ROOM+1611%2C+16%2FF%2C+THE+METROPOLIS+TOWER%2C+10+METROPOLIS+DRIVE%2C+HUNG+HOM%2C+HONG+KONG"
+                  target="_blank"
+                  class="short"
+                >
+                  ROOM 1611, 16/F, THE METROPOLIS TOWER, 10 METROPOLIS DRIVE,
+                  HUNG HOM, HONG KONG
+                </a>
               </li>
             </ul>
           </div>
@@ -148,6 +151,9 @@ li {
 .icon {
   width: 20px;
 }
+.short {
+  max-width: 200px;
+}
 
 @media (max-width: 768px) {
   .logo {
@@ -202,9 +208,16 @@ li {
   }
   .list__item {
     gap: 5px;
+    align-items: flex-start;
   }
+
   .list.contacts {
     gap: 10px;
+  }
+}
+@media (min-width: 540px) and (max-width: 769px) {
+  .inner:nth-of-type(2) {
+    width: 52%;
   }
 }
 </style>

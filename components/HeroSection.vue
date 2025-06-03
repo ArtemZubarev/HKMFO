@@ -79,7 +79,7 @@ p {
   }
   .overlay {
     padding-bottom: 250px;
-    margin-top: 50px;
+    margin-top: 0px;
     padding-top: 150px;
     background: none;
   }
@@ -88,19 +88,26 @@ p {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: -50px;
+    top: 0px;
     left: 0;
-    background: url("/images/banner.jpg") center/cover no-repeat;
-    background-position: -800px 40px;
+    background: url("/images/banner-mobile.jpg") center/cover no-repeat;
+    background-position: bottom 0px;
     z-index: -1;
     transform: scale(1);
   }
   h1 {
-    font-size: 38px;
+    font-size: 36px;
+    margin-bottom: 15px;
   }
   p {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
+    margin-bottom: 20px;
+  }
+  h1,
+  p,
+  a {
+    margin-left: 30px;
   }
 }
 </style>
