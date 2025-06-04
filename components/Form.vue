@@ -63,6 +63,7 @@ const sendForm = async () => {
     });
 
     const data = await res.json();
+    console.log(data);
     if (res.ok) {
       alert("Заявка отправлена!\nПредпросмотр: " + data.previewUrl);
     } else {
