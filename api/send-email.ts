@@ -1,9 +1,8 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend("re_Vj9wsAkc_9FwiXz8aeGcRyCAoHTap4Ut6");
 
 export default async function handler(req: any, res: any) {
-  console.log(process.env.RESEND_API_KEY);
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Метод не разрешён" });
   }
@@ -17,7 +16,7 @@ export default async function handler(req: any, res: any) {
   try {
     const data = await resend.emails.send({
       from: "Заявки с сайта <onboarding@resend.dev>", // или verified@yourdomain.com
-      to: [process.env.MAIL_TO as string],
+      to: ["xagrssr@gmail.com" as string],
       subject: "Новая заявка с сайта",
       html: `
         <p><strong>Имя:</strong> ${name}</p>
