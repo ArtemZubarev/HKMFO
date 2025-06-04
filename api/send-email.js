@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
   try {
     const data = await resend.emails.send({
-      from: "Заявки с сайта <onboarding@resend.dev>", // или verified@yourdomain.com
+      from: "Application from website <mfotrust.hk>", // или verified@yourdomain.com
       to: ["xagrssr@gmail.com"],
       subject: "Новая заявка с сайта",
       html: `
