@@ -55,11 +55,13 @@ const formData = ref({
 const form = ref(null);
 
 const sendForm = async () => {
+  const body = JSON.stringify(formData.value);
+  console.log(body);
   try {
     const res = await fetch("/api/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData.value),
+      body,
     });
 
     const data = await res.json();
