@@ -1,6 +1,6 @@
-// /api/send-email.js
+import { Resend } from "resend";
 
-import nodemailer from "nodemailer";
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
@@ -14,36 +14,21 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
-    // Создание транспортера для теста через Ethereal
-    const testAccount = await nodemailer.createTestAccount();
-
-    const transporter = nodemailer.createTransport({
-      host: testAccount.smtp.host,
-      port: testAccount.smtp.port,
-      secure: testAccount.smtp.secure,
-      auth: {
-        user: testAccount.user,
-        pass: testAccount.pass,
-      },
+    const data = await resend.emails.send({
+      from: "Заявки с сайта <onboarding@resend.dev>", // или verified@yourdomain.com
+      to: [process.env.MAIL_TO as string],
+      subject: "Новая заявка с сайта",
+      html: `
+        <p><strong>Имя:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Сообщение:</strong><br/>${message}</p>
+      `,
     });
 
-    const mailOptions = {
-      from: `"${name}" <${email}>`,
-      to: "xagrssr@gmail.com", // Замените на свою почту
-      subject: "New application",
-      text: message,
-    };
-
-    const info = await transporter.sendMail(mailOptions);
-    console.log(res);
-    console.log(info);
-    // Для теста: возвращаем ссылку на Ethereal
-    return res.status(200).json({
-      message: "Письмо отправлено",
-      previewUrl: nodemailer.getTestMessageUrl(info),
-    });
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ message: "Ошибка при отправке письма" });
+    console.log("Resend API response:", data);
+    return res.status(200).json({ message: "Письмо отправлено!" });
+  } catch (error) {
+    console.error("Ошибка отправки письма:", error);
+    return res.status(500).json({ message: "Ошибка отправки письма" });
   }
 }
