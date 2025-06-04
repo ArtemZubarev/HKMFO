@@ -2,7 +2,7 @@ import { Resend } from "resend";
 
 const resend = new Resend("re_Vj9wsAkc_9FwiXz8aeGcRyCAoHTap4Ut6");
 
-export default async function handler(req: any, res: any) {
+export default async function handler(reqres) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Метод не разрешён" });
   }
@@ -16,7 +16,7 @@ export default async function handler(req: any, res: any) {
   try {
     const data = await resend.emails.send({
       from: "Заявки с сайта <onboarding@resend.dev>", // или verified@yourdomain.com
-      to: ["xagrssr@gmail.com" as string],
+      to: ["xagrssr@gmail.com"],
       subject: "Новая заявка с сайта",
       html: `
         <p><strong>Имя:</strong> ${name}</p>
