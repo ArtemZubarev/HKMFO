@@ -13,8 +13,9 @@
 </template>
 
 <script setup>
-import Header from "./components/Header.vue";
-import HeroSection from "./components/HeroSection.vue";
+useSeoMeta({
+  ogImage: "/fav.png",
+});
 </script>
 
 <style>

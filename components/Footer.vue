@@ -154,7 +154,11 @@ li {
 .short {
   max-width: 200px;
 }
-
+@media (max-width: 540px) {
+  .logo {
+    max-width: 70px;
+  }
+}
 @media (max-width: 768px) {
   .logo {
     /* max-width: 70px; */
@@ -215,9 +219,9 @@ li {
     gap: 10px;
   }
 }
-@media (min-width: 540px) and (max-width: 769px) {
+@media (min-width: 320px) and (max-width: 769px) {
   .inner:nth-of-type(2) {
-    width: 52%;
+    width: 60%;
   }
 }
 </style>

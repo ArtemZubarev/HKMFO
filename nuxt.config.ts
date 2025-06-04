@@ -9,4 +9,9 @@ export default defineNuxtConfig({
     },
     display: "swap",
   },
+  app: {
+    head: {
+      link: [{ rel: "icon", type: "image/x-icon", href: "/fav.png" }],
+    },
+  },
 });

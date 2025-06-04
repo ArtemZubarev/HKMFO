@@ -75,5 +75,8 @@ function handleLinkClick(href) {
     padding: 0 15px;
     line-height: 120%;
   }
+  .experience:before {
+    background: url("/images/view_comp.png") center/cover no-repeat;
+  }
 }
 </style>
