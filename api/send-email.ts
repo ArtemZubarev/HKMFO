@@ -30,12 +30,13 @@ export default async function handler(req: any, res: any) {
     const mailOptions = {
       from: `"${name}" <${email}>`,
       to: "xagrssr@gmail.com", // Замените на свою почту
-      subject: "Новая заявка с сайта",
+      subject: "New application",
       text: message,
     };
 
     const info = await transporter.sendMail(mailOptions);
-
+    console.log(res);
+    console.log(info);
     // Для теста: возвращаем ссылку на Ethereal
     return res.status(200).json({
       message: "Письмо отправлено",
