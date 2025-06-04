@@ -2,7 +2,7 @@ import { Resend } from "resend";
 
 const resend = new Resend("re_Vj9wsAkc_9FwiXz8aeGcRyCAoHTap4Ut6");
 
-export default async function handler(reqres) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Метод не разрешён" });
   }
