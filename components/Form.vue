@@ -54,9 +54,29 @@ const formData = ref({
 
 const form = ref(null);
 
+const sendForm = async () => {
+  try {
+    const res = await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData.value),
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      alert("Заявка отправлена!\nПредпросмотр: " + data.previewUrl);
+    } else {
+      alert("Ошибка: " + data.message);
+    }
+  } catch (err) {
+    alert("Ошибка при отправке");
+    console.error(err);
+  }
+};
+
 const onSubmit = () => {
   if (form.value.checkValidity()) {
-    alert("Form submitted:", formData.value);
+    sendForm();
   } else {
     form.value.reportValidity(); // Native validation
   }
