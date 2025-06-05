@@ -45,11 +45,11 @@
               </li>
             </ul>
           </div>
-          <div class="inner">
+          <!-- <div class="inner">
             <div class="title">Still have questions?</div>
             <EmailInput v-model="parentValue" @button-click="onButtonClick" />
             <p class="answer">We will answer any questions within 5 minutes</p>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="box">
@@ -156,16 +156,10 @@ li {
 }
 @media (max-width: 540px) {
   .logo {
-    max-width: 70px;
+    /* max-width: 70px; */
   }
 }
 @media (max-width: 768px) {
-  .logo {
-    /* max-width: 70px; */
-  }
-  .box {
-    /* padding: 0 10px; */
-  }
   .block {
     flex-wrap: wrap;
     justify-content: flex-start;
