@@ -17,18 +17,18 @@ export default async function handler(req, res) {
     const data = await resend.emails.send({
       from: "Application from website <mfotrust.hk>", // или verified@yourdomain.com
       to: ["xagrssr@gmail.com"],
-      subject: "Новая заявка с сайта",
+      subject: "New application",
       html: `
-        <p><strong>Имя:</strong> ${name}</p>
+        <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Сообщение:</strong><br/>${message}</p>
+        <p><strong>Message:</strong><br/>${message}</p>
       `,
     });
 
     console.log("Resend API response:", data);
-    return res.status(200).json({ message: "Письмо отправлено!" });
+    return res.status(200).json({ message: "Email sent!" });
   } catch (error) {
-    console.error("Ошибка отправки письма:", error);
-    return res.status(500).json({ message: "Ошибка отправки письма" });
+    console.error("Error when trying to send:", error);
+    return res.status(500).json({ message: "Error when trying to send" });
   }
 }

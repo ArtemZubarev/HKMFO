@@ -39,7 +39,17 @@
       ></textarea>
     </div>
 
-    <button class="button" type="submit">Submit Now</button>
+    <button
+      v-if="status === 'INIT' || status === 'PENDING'"
+      class="button"
+      type="submit"
+      :disabled="status === 'PENDING'"
+    >
+      Submit Now
+    </button>
+    <ButtonLoader v-else-if="status === 'PENDING'" class="loader" />
+    <AlertSuccess v-else-if="status === 'SUCCESS'" />
+    <AlertError v-else-if="status === 'FAILED'" />
   </form>
 </template>
 
@@ -47,16 +57,17 @@
 import { ref } from "vue";
 
 const formData = ref({
-  name: "qsdaqasdas",
-  email: "asdasd@asd.asd",
-  message: "asdasdasdasdsaddasd",
+  name: "",
+  email: "",
+  message: "",
 });
 
 const form = ref(null);
+const status = ref("INIT");
 
 const sendForm = async () => {
   const body = JSON.stringify(formData.value);
-  console.log(body);
+  status.value = "PENDING";
   try {
     const res = await fetch("/api/send-email", {
       method: "POST",
@@ -67,12 +78,12 @@ const sendForm = async () => {
     const data = await res.json();
     console.log(data);
     if (res.ok) {
-      alert("Заявка отправлена!\nПредпросмотр: " + data.previewUrl);
+      status.value = "SUCCESS";
     } else {
-      alert("Ошибка: " + data.message);
+      console.error("Error: " + data.message);
     }
   } catch (err) {
-    alert("Ошибка при отправке");
+    status.value = "FAILED";
     console.error(err);
   }
 };
@@ -139,6 +150,9 @@ textarea::placeholder {
   padding: 8px 20px;
   color: #fff;
   margin-top: 25px;
+}
+.loader {
+  width: 40px;
 }
 
 @media (max-width: 1024px) {

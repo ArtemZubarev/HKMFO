@@ -7,10 +7,10 @@
         </div>
         <div class="inner">
           <p class="text">
-            HK MFO Trustee is an independent Hong Kong trust companyspecialising
-            in trust formation, asset management, fiduciary services, and
-            succession planning. We deliver tailored, compliant solutions to
-            protect andmanage wealth globally.
+            HK MFO Trustee is an independent Hong Kong trust company
+            specialising in trust formation, asset management, fiduciary
+            services, and succession planning. We deliver tailored, compliant
+            solutions to protect and manage wealth globally.
           </p>
         </div>
       </div>
