@@ -33,7 +33,7 @@ const list = [
   {
     id: "02",
     title: "Asset Stewardship Acting",
-    text: "Acting as independent trustees, we manage and oversee assets in the best interests of beneficiaries while aligning with the settlors' intent.",
+    text: "Acting as independent trustees, we manage and oversee assets in the best interests of beneficiaries while aligning with the settlers' intent.",
   },
   {
     id: "03",

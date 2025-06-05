@@ -14,7 +14,7 @@
         class="button"
         @click.prevent="() => handleLinkClick('#profile')"
       >
-        Registered
+        Sign Up
         <NuxtImg class="button__icon w-[29px]" src="/images/arrow-button.svg" />
       </a>
     </div>

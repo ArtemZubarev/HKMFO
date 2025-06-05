@@ -65,26 +65,37 @@ const formData = ref({
 const form = ref(null);
 const status = ref("INIT");
 
+// 🔁 ВСТАВЬ сюда свой Formspree endpoint
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/manjnvwb";
+
 const sendForm = async () => {
-  const body = JSON.stringify(formData.value);
+  const payload = new FormData();
+  payload.append("name", formData.value.name);
+  payload.append("email", formData.value.email);
+  payload.append("message", formData.value.message);
+
   status.value = "PENDING";
+
   try {
-    const res = await fetch("/api/send-email", {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body,
+      body: payload,
+      headers: {
+        Accept: "application/json",
+      },
     });
 
-    const data = await res.json();
-    console.log(data);
     if (res.ok) {
       status.value = "SUCCESS";
+      formData.value = { name: "", email: "", message: "" }; // очистка формы
     } else {
-      console.error("Error: " + data.message);
+      const data = await res.json();
+      console.error("Error:", data);
+      status.value = "FAILED";
     }
   } catch (err) {
-    status.value = "FAILED";
     console.error(err);
+    status.value = "FAILED";
   }
 };
 
@@ -92,7 +103,7 @@ const onSubmit = () => {
   if (form.value.checkValidity()) {
     sendForm();
   } else {
-    form.value.reportValidity(); // Native validation
+    form.value.reportValidity(); // стандартная валидация
   }
 };
 </script>

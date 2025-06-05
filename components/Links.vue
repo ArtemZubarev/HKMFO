@@ -15,7 +15,7 @@
 <script setup>
 const list = [
   {
-    text: "Tax Concessions for Family-owned Investment Holding Vehicles",
+    text: "Tax Concessions for Family-owned Investment Holding vehicles",
     url: "http://ird.gov.hk/eng/tax/bus_fihv.htm#a01",
   },
   {

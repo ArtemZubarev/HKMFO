@@ -9,10 +9,10 @@
           <button class="button">History</button>
           <h2 class="title">Origins & Regulation </h2>
           <p class="text">
-            HK MFO Trustee Limited was established as a Trust Company in Hong
-            Kong, managed by a management with a foundation built over two
-            decades of experience in financial services both locally and
-            internationally.
+            HF MFO Trusted Limited was established as a trust company in Hong
+            Kong and is maintained by management with a strong foundation. It
+            has over two decades of experience in financial services both
+            locally and internationally.
           </p>
           <p class="text">
             We are registered under Part 8 of the Trustee Ordinance (Cap. 29) as

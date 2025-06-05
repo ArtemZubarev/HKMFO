@@ -3,8 +3,12 @@
     <div class="step" v-for="(item, index) in list" :key="item.title">
       <NuxtImg class="image" :src="`/images/step_${index + 1}.jpg`" />
       <div class="box">
-        <div class="subtitle">{{ item.title }}</div>
-        <div class="text">{{ item.text }}</div>
+        <div class="subtitle">
+          {{ item.title }}
+        </div>
+        <div class="text">
+          <b>{{ item.strong }}</b> {{ item.text }}
+        </div>
       </div>
     </div>
   </div>
@@ -14,18 +18,22 @@
 const list = [
   {
     title: "step 1",
-    text: "Initial Consultation We begin with a private consultation to understand your goals and requirements.",
+    strong: "Initial Consultation",
+    text: "We begin with a private consultation to understand your goals and requirements.",
   },
   {
     title: "step 2",
-    text: "Structuring We develop a tailored trust or fiduciary solution aligned with your needs, assets and jurisdictions.",
+    strong: "Structuring",
+    text: "We develop a tailored trust or fiduciary solution aligned with your needs, assets and jurisdictions.",
   },
   {
     title: "step 3",
-    text: "Implementation We establish the agreed structure, handle legal formalities and commence administration. ",
+    strong: "Implementation",
+    text: "We establish the agreed structure, handle legal formalities and commence administration. ",
   },
   {
     title: "step 4",
+    strong: "Ongoing Management",
     text: "We provide continuous support, compliance oversight and adaptive advice as your needs evolve.",
   },
 ];
@@ -62,6 +70,9 @@ const list = [
 .text {
   font-size: 18px;
   font-weight: 300;
+}
+b {
+  font-weight: 500;
 }
 @media (max-width: 768px) {
   .step {
