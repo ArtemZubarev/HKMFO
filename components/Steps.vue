@@ -7,7 +7,8 @@
           {{ item.title }}
         </div>
         <div class="text">
-          <b>{{ item.strong }}</b> {{ item.text }}
+          <b>{{ item.strong }}</b> <br />
+          {{ item.text }}
         </div>
       </div>
     </div>

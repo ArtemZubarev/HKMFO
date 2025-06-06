@@ -98,6 +98,8 @@ const handleLinkClick = (href) => {
   height: 100%;
   padding: 1rem;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  padding-left: 30px;
+  padding-top: 50px;
 }
 
 .links {
@@ -107,8 +109,13 @@ const handleLinkClick = (href) => {
 }
 
 .links a {
+  display: block;
   text-decoration: none;
   color: #333;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  padding: 6px 0;
+}
+.links li:not(:last-of-type) a {
+  border-bottom: 1px solid black;
 }
 </style>

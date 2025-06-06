@@ -24,11 +24,11 @@
           </p>
           <p class="text">
             Drawing on Hong Kong’s long-standing common law heritage and strong
-            regulatory framework, we serve clients seeking trusted, compliant,
-            and strategically structured wealth protection vehicles.  With a
-            focus on integrity and continuity, we position ourselves as a
-            reliable partner for high-net-worth families and institutions across
-            Asia and beyond.
+            regulatory framework, we assist clients seeking trusted, compliant,
+            and structured wealth protection services.  With a focus on
+            integrity and continuity, we position ourselves as a reliable
+            partner for high-net-worth families and institutions across Asia and
+            beyond.
           </p>
         </div>
       </div>
