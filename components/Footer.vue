@@ -22,7 +22,7 @@
             <div class="title">Profile</div>
             <ul class="list">
               <li class="list__item">Sign in</li>
-              <li class="list__item">Sign up</li>
+              <!-- <li class="list__item">Sign up</li> -->
             </ul>
           </div>
           <div class="inner">

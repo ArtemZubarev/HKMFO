@@ -9,14 +9,14 @@
         Experienced partner in trust <br />
         setup and asset stewardship
       </p>
-      <a
+      <!-- <a
         href="#profile"
         class="button"
         @click.prevent="() => handleLinkClick('#profile')"
       >
         Sign Up
         <NuxtImg class="button__icon w-[29px]" src="/images/arrow-button.svg" />
-      </a>
+      </a> -->
     </div>
     <!-- <NuxtImg src="/images/banner.jpg" /> -->
   </section>
