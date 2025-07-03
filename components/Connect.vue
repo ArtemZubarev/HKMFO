@@ -75,6 +75,9 @@ const activeTab = ref(tabs[0]);
   width: 100%;
 }
 @media (max-width: 1024px) {
+  .tabs {
+    margin-top: 20px;
+  }
   .box {
     flex-direction: column;
     align-items: center;
