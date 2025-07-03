@@ -54,8 +54,7 @@
       </div>
       <div class="box">
         <p class="copyright">
-          Copyright {{ currentYear }} @HK MFO Trusted Limited. All Right
-          Reserved
+          Copyright {{ currentYear }} HK MFO Trusted Limited. All Right Reserved
         </p>
       </div>
     </div>
