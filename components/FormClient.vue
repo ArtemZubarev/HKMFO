@@ -2,14 +2,25 @@
   <form class="form" @submit.prevent="onSubmit" ref="form">
     <div class="box">
       <div class="field input">
-        <label for="name">Name</label>
+        <label for="name">First name</label>
         <input
           id="name"
           name="name"
-          v-model="formData.name"
+          v-model="formData.firstName"
           type="text"
           required
-          placeholder="John Carter"
+          placeholder="John"
+        />
+      </div>
+      <div class="field input">
+        <label for="name">Last name</label>
+        <input
+          id="name"
+          name="name"
+          v-model="formData.lastName"
+          type="text"
+          required
+          placeholder="Carter"
         />
       </div>
 
@@ -24,19 +35,17 @@
           placeholder="example@domain.com"
         />
       </div>
-    </div>
-
-    <div class="field">
-      <label for="message">Leave us message</label>
-      <textarea
-        id="message"
-        name="message"
-        v-model="formData.message"
-        required
-        minlength="10"
-        placeholder="Please type your message here..."
-        rows="7"
-      ></textarea>
+      <div class="field input">
+        <label for="email">Phone</label>
+        <input
+          id="email"
+          name="phone"
+          v-model="formData.phone"
+          type="phone"
+          required
+          placeholder="Your phone number"
+        />
+      </div>
     </div>
 
     <button
@@ -57,9 +66,10 @@
 import { ref } from "vue";
 
 const formData = ref({
-  name: "",
+  firstName: "",
+  lastName: "",
   email: "",
-  message: "",
+  phone: "",
 });
 
 const form = ref(null);
@@ -69,10 +79,11 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/manjnvwb";
 
 const sendForm = async () => {
   const payload = new FormData();
-  payload.append("type", "Become a client");
-  payload.append("name", formData.value.name);
+  payload.append("type", "Support");
+  payload.append("firstName", formData.value.firstName);
+  payload.append("lastName", formData.value.lastName);
   payload.append("email", formData.value.email);
-  payload.append("message", formData.value.message);
+  payload.append("phone", formData.value.phone);
 
   status.value = "PENDING";
 
@@ -87,7 +98,7 @@ const sendForm = async () => {
 
     if (res.ok) {
       status.value = "SUCCESS";
-      formData.value = { name: "", email: "", message: "" }; // очистка формы
+      formData.value = { firstName: "", lastName: "", email: "", phone: "" }; // очистка формы
     } else {
       const data = await res.json();
       console.error("Error:", data);
