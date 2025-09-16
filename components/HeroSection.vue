@@ -32,7 +32,7 @@ function handleLinkClick(href) {
 
 <style scoped>
 .hero {
-  background: url("/images/banner.jpg") center/cover no-repeat;
+  background: url("/images/banner_1.jpg") center/cover no-repeat;
   min-height: 100vh;
   position: relative;
 }
@@ -49,12 +49,14 @@ h1 {
   line-height: 125%;
   margin-bottom: 20px;
   font-weight: 500;
+  color: #fff;
 }
 p {
   font-size: 22px;
   max-width: 340px;
   line-height: 125%;
   margin-bottom: 40px;
+  color: #fff;
 }
 .button {
   padding: 6px 20px;
