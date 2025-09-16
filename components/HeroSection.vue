@@ -32,7 +32,9 @@ function handleLinkClick(href) {
 
 <style scoped>
 .hero {
-  background: url("/images/banner_1.jpg") center/cover no-repeat;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url("/images/banner_1.jpg") center/cover no-repeat;
   min-height: 100vh;
   position: relative;
 }
@@ -50,6 +52,7 @@ h1 {
   margin-bottom: 20px;
   font-weight: 500;
   color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 p {
   font-size: 22px;
@@ -57,6 +60,7 @@ p {
   line-height: 125%;
   margin-bottom: 40px;
   color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .button {
   padding: 6px 20px;
@@ -97,6 +101,7 @@ p {
     background-position: bottom 0px;
     z-index: -1;
     transform: scale(1);
+    filter: brightness(60%);
   }
   h1 {
     font-size: 36px;
