@@ -82,7 +82,7 @@ p {
   .overlay {
     padding-bottom: 250px;
     margin-top: 0px;
-    padding-top: 150px;
+    padding-top: 290px;
     background: none;
   }
   .hero:before {
@@ -92,7 +92,8 @@ p {
     position: absolute;
     top: 0px;
     left: 0;
-    background: url("/images/banner-mobile.jpg") center/cover no-repeat;
+    /* background: url("/images/banner-mobile.jpg") center/cover no-repeat; */
+    background: url("/images/banner_1.jpg") center/cover no-repeat;
     background-position: bottom 0px;
     z-index: -1;
     transform: scale(1);
